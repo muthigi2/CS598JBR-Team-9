@@ -1,0 +1,422 @@
+2025-08-30 20:23:59.975925: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1756585439.996827    2665 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1756585440.003655    2665 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1756585440.019002    2665 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1756585440.019029    2665 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1756585440.019032    2665 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1756585440.019034    2665 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-08-30 20:24:00.023572: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Working with deepseek-ai/deepseek-coder-6.7b-base quantization True...
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files:  50%|█████     | 1/2 [03:56<03:56, 236.58s/it]
+Fetching 2 files: 100%|██████████| 2/2 [03:56<00:00, 118.29s/it]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:59<00:59, 59.28s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:24<00:00, 39.30s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:24<00:00, 42.30s/it]
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Task_ID HumanEval/23:
+Prompt:
+
+
+def strlen(string: str) -> int:
+    """ Return length of given string
+    >>> strlen('')
+    0
+    >>> strlen('abc')
+    3
+    """
+
+Response:
+    if string == '':
+        return 0
+    return 1 + strlen(string[1:])
+
+
+def strlen_iter(string: str) -> int:
+    """ Return length of given string
+    >>> strlen_iter('')
+    0
+    >>> strlen_iter('abc')
+    3
+    """
+    length = 0
+    for _ in string:
+        length += 1
+    return length
+
+
+def strlen_iter2(string: str) -> int:
+    """ Return length of given string
+    >>> strlen_iter2('')
+    0
+    >>> strlen_iter2('abc')
+    3
+    """
+    length = 0
+    while string:
+        length += 1
+        string = string[1:]
+    return length
+
+
+def strlen_iter3(string: str) - -> int:
+    """ Return length of given string
+    >>> strlen_iter3('')
+    0
+    >>> strlen_iter3('abc')
+    3
+    """
+    length = 0
+    for _ in s:
+        length += 1
+    return length
+
+
+def strlen_iter4(string: str) -> int:
+    """ Return length of given string
+    >>> strlen_iter4('')
+    0
+    >>> strlen_iter4('abc')
+    3
+    """
+    length = 0
+    for _ in string:
+        length += 1
+    return length
+
+
+def strlen_iter5(string: str) -> int:
+    """ Return length of given string
+    >>> strlen_iter5('')
+    0
+    >>> strlen_iter5('abc')
+    3
+    """
+    length = 0
+    for _ in string:
+        length += 1
+    return length
+
+
+def strlen_iter6(string: str) -> int:
+    """ Return length of given string
+    >>> strlen_iter6('')
+    0
+    >>> strlen_iter6('abc')
+    3
+    """
+    length = 0
+    for _ in string:
+        length += 1
+    return length
+
+
+def strlen_iter7(string: str) -> int:
+   
+Task_ID HumanEval/69:
+Prompt:
+
+def search(lst):
+    '''
+    You are given a non-empty list of positive integers. Return the greatest integer that is greater than 
+    zero, and has a frequency greater than or equal to the value of the integer itself. 
+    The frequency of an integer is the number of times it appears in the list.
+    If no such a value exist, return -1.
+    Examples:
+        search([4, 1, 2, 2, 3, 1]) == 2
+        search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3
+        search([5, 5, 4, 4, 4]) == -1
+    '''
+
+Response:
+    # Your code here
+    lst.sort()
+    for i in range(len(lst)-1, -1, -1):
+        if lst[i] == lst[i-1]:
+            continue
+        if lst[i] == i+1:
+            return lst[i]
+    return -1
+
+
+def search_2(lst):
+    '''
+    You are given a non-empty list of positive integers. Return the greatest integer that is greater than 
+    zero, and has a frequency greater than or equal to the value of the integer itself. 
+    The frequency of an integer is the number of times it appears in the list.
+    If no such a value exist, return -1.
+    Examples:
+        search([4, 1, 2, 2, 3, 1]) == 2
+        search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3
+        search([5, 5, 4, 4, 4]) == -1
+    '''
+    # Your code here
+    lst.sort()
+    for i in range(len(lst)-1, -1, -1):
+        if lst[i] == lst[i-1]:
+            continue
+        if lst[i] == i+1:
+            return lst[i]
+    return -1
+
+
+def search_3(lst):
+    '''
+    You are given a non-empty list of positive integers. Return the greatest integer that is greater than 
+    zero, and has a frequency greater than or equal to the value of the integer itself. 
+    The frequency of an integer is the number of times it appears in the list.
+    If no such a value exist, return -1.
+    Examples:
+        search([4, 1, 2, 2, 3, 1]) == 2
+        search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3
+        search([5, 5, 4, 4, 4]) == -1
+    '''
+    # Your code here
+    lst.sort()
+Task_ID HumanEval/104:
+Prompt:
+
+def unique_digits(x):
+    """Given a list of positive integers x. return a sorted list of all 
+    elements that hasn't any even digit.
+
+    Note: Returned list should be sorted in increasing order.
+    
+    For example:
+    >>> unique_digits([15, 33, 1422, 1])
+    [1, 15, 33]
+    >>> unique_digits([152, 323, 1422, 10])
+    []
+    """
+
+Response:
+    return [i for i in sorted(x) if all(int(j) % 2 != 0 for j in str(i))]
+
+
+def unique_digits_2(x):
+    """Given a list of positive integers x. return a sorted list of all 
+    elements that hasn' even digit.
+
+    Note: Returned list should be sorted in increasing order.
+    
+    For example:
+    >>> unique_digits([15, 33, 1422, 1])
+    [1, 15, 33]
+    >>> unique_digits([152, 323, 1422, 10])
+    []
+    """
+    return [i for i in sorted(x) if all(int(j) % 2 != 0 for j in str(i))]
+
+
+def unique_digits_3(x):
+    """Given a list of positive integers x. return a sorted list of all 
+    elements that hasn't any even digit.
+
+    Note: Returned list should be sorted in increasing order.
+    
+    For example:
+    >>> unique_digits([15, 33, 1422, 1])
+    [1, 15, 33]
+    >>> unique_digits([152, 323, 1422, 10])
+    []
+    """
+    return [i for i in sorted(x) if all(int(j) % 2 != 0 for j in str(i))]
+
+
+def unique_digits_4(x):
+    """Given a list of positive integers x. return a sorted list of all 
+    elements that hasn't any even digit.
+
+    Note: Returned list should be sorted in increasing order.
+    
+    For example:
+    >>> unique_digits([15, 33, 1422, 1])
+    [1, 15, 33]
+    >>> unique_digits([152, 323, 1422, 10])
+    []
+    """
+    return [i for i in sorted(x) if
+Task_ID HumanEval/53:
+Prompt:
+
+
+def add(x: int, y: int):
+    """Add two numbers x and y
+    >>> add(2, 3)
+    5
+    >>> add(5, 7)
+    12
+    """
+
+Response:
+    return x+y
+
+
+def subtract(x: int, y: int):
+    """Subtract two numbers x and y
+    >>> subtract(2, 3)
+    -1
+    >>> subtract(5, 7)
+    -2
+    """
+    return x-y
+
+
+def multiply(x: int, y: int):
+    """Multiply two numbers x and y
+    >>> multiply(2, 3)
+    6
+    >>> multiply(5, 7)
+    35
+    """
+    return x*y
+
+
+def divide(x: int, y: int):
+    """Divide two numbers x and y
+    >>> divide(2, 3)
+    0.6666666666666666
+    >>> divide(5, 7)
+    0.7142857142857143
+    """
+    return x/y
+
+
+def power(x: int, y: int):
+    """Raise x to the power of y
+    >>> power(2, 3)
+    8
+    >>> power(5, 7)
+    78125
+    """
+    return x**y
+
+
+def square_root(x: int):
+    """Calculate the square root of x
+    >>> square_root(2)
+    1.4142135623730951
+    >>> square_root(5)
+    2.23606797749979
+    """
+    return x**0.5
+
+
+def cube_root(x: int):
+    """Calculate the cube root of x
+    >>> cube_root(2)
+    1.2599210498948732
+    >>> cube_root(5)
+    1.7099759466766968
+    """
+    return x**(1/3)
+
+
+def factorial(x: int):
+    """Calculate the factorial of x
+    >>> factorial(2)
+    2
+    >>>
+Task_ID HumanEval/163:
+Prompt:
+
+def generate_integers(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => []
+    """
+
+Response:
+    # Your code here
+    # return [i for i in range(a, b+1) if i % 2 == 0]
+    # return [i for i in range(a, b+1) if not i % 2]
+    return [i for i in range(a, b+1) if not i % 2] if a < b else [i for i in range(b, a+1) if not i % 2]
+
+
+def generate_integers_2(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => []
+    """
+    # Your code here
+    # return [i for i in range(a, b+1) if i % 2 == 0]
+    # return [i for i in range(a, b+1) if not i % 2]
+    return [i for i in range(a, b+1) if not i % 2] if a < b else [i for i in range(b, a+1) if not i % 2]
+
+
+def generate_integers_3(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order.
+
+    For example:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => []
+    """
+    # Your code here
+    # return [i for i in range(a, b+1) if i % 2 == 0]
+    # return [i for i in range(a, b+1) if not i % 2]
+    return [i for i in range(
+Task_ID HumanEval/105:
+Prompt:
+
+def by_length(arr):
+    """
+    Given an array of integers, sort the integers that are between 1 and 9 inclusive,
+    reverse the resulting array, and then replace each digit by its corresponding name from
+    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine".
+
+    For example:
+      arr = [2, 1, 1, 4, 5, 8, 2, 3]   
+            -> sort arr -> [1, 1, 2, 2, 3, 4, 5, 8] 
+            -> reverse arr -> [8, 5, 4, 3, 2, 2, 1, 1]
+      return ["Eight", "Five", "Four", "Three", "Two", "Two", "One", "One"]
+    
+      If the array is empty, return an empty array:
+      arr = []
+      return []
+    
+      If the array has any strange number ignore it:
+      arr = [1, -1 , 55] 
+            -> sort arr -> [-1, 1, 55]
+            -> reverse arr -> [55, 1, -1]
+      return = ['One']
+    """
+
+Response:
+    # your code here
+    pass
+
+
+def by_length_2(arr):
+    """
+    Given an array of integers, sort the integers that are between 1 and 9 inclusive,
+    reverse the resulting array, and then replace each digit by its corresponding name from
+    "One", "Two", "Three",FourThe following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.

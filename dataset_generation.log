@@ -1,0 +1,13 @@
+NetIDs ['muthigi2', 'sgnayak2', 'ritikh2', 'ya11'] with seed 334353539378548775924755766877180033789
+
+Downloading readme: 0.00B [00:00, ?B/s]
+Downloading readme: 6.52kB [00:00, 23.6MB/s]
+
+Downloading data:   0%|          | 0.00/83.9k [00:00<?, ?B/s]
+Downloading data: 100%|██████████| 83.9k/83.9k [00:00<00:00, 427kB/s]
+Downloading data: 100%|██████████| 83.9k/83.9k [00:00<00:00, 426kB/s]
+
+Generating test split:   0%|          | 0/164 [00:00<?, ? examples/s]
+Generating test split: 100%|██████████| 164/164 [00:00<00:00, 3787.16 examples/s]
+Entire Dataset saved to humaneval.jsonl
+Selected 20 problems saved to selected_humaneval_334353539378548775924755766877180033789.jsonl
