@@ -4,7 +4,7 @@
 - [Saurav Nayak], [sgnayak2]
 - [Yegu Sanjana Annamalai], [ya11]
 - [Anil Muthigi], [muthigi2]
-- [Ritik Hariyan], [ritikh2]
+- [Ritik Hariani], [ritikh2]
 
 ## Link of Google Colab Notebook
 - MP1 - [link](URL) (please add the link here)
