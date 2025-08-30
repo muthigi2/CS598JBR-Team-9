@@ -1,10 +1,10 @@
 # CS598JBR-Team-0
 
 ## Group members
-- [Team member1], [NetID]
-- [Team member2], [NetID]
-- [Team member3], [NetID]
-- [Team member4], [NetID]
+- [Saurav Nayak], [sgnayak2]
+- [Yegu Sanjana Annamalai], [ya11]
+- [Anil Muthigi], [muthigi2]
+- [Ritik Hariyan], [ritikh2]
 
 ## Link of Google Colab Notebook
 - MP1 - [link](URL) (please add the link here)
