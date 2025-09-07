@@ -2,6 +2,9 @@ import jsonlines
 import sys
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
+import transformers
+
+transformers.logging.set_verbosity_error()
 
 #####################################################
 # Please finish all TODOs in this file for MP1;
@@ -51,14 +54,13 @@ def prompt_model(dataset, model_name = "deepseek-ai/deepseek-coder-6.7b-base", q
         prompt = case['prompt']
         
         # TODO: prompt the model and get the response
-        inputs = tokenizer.encode(prompt, return_tensors="pt").to(model.device)
+        inputs = tokenizer(prompt, return_tensors="pt", padding=True, return_attention_mask=True).to(model.device)
         
         with torch.no_grad():
             outputs = model.generate(
-                inputs,
+                **inputs,
                 max_new_tokens=512,
                 temperature=0.0,  # Temperature 0 as required
-                do_sample=False,  # Use greedy decoding for temperature 0
                 pad_token_id=tokenizer.eos_token_id,
                 eos_token_id=tokenizer.eos_token_id
             )
